@@ -1,0 +1,32 @@
+## Automation Studio : ignore temporary files and build results (.gitignore parallel to *.apj)
+
+# Ignore AR versions as those are not considered part of the project
+/AS/System/
+
+# Ignore build results
+/Binaries/
+
+# Ignore debugging files
+/Diagnosis/
+# To save the watch windows and task trace configurations, uncomment the following 3 lines (which makes exceptions for these files): 
+#!/Diagnosis/**/
+#!/Diagnosis/**/*.PVM
+#!/Diagnosis/**/*.tc
+
+# Ignore temp folder
+/Temp/
+
+# Ignore upgrades as those are not considered part of the project source code
+**/Upgrades
+
+# Ignore user settings file
+/*.set
+# However, INCLUDE all the SafeDESIGNER .set files, if the project includes safety
+!/Physical/**/*.set
+
+# Ignore is open indication
+/*.isopen
+
+# Ignore all .zip files within the project directory
+*.zip
+
