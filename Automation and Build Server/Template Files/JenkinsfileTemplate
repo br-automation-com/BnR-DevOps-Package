@@ -35,7 +35,7 @@ pipeline {
         stage('Build AS Project') {
 			steps {
 				BuildASProject(project: "${PROJECT_DIR}", configuration: "${CONFIG_NAME}", max_warnings: -1, buildpip: true);
-                		powershell(returnStdout: true, script: "Move-Item -Path PIP.zip -Destination PIP-${RELEASE_VERSION}.zip -Force");
+				powershell(returnStdout: true, script: "Move-Item -Path PIP.zip -Destination PIP-${RELEASE_VERSION}.zip -Force");
 			}
         }
         stage('Unit Tests') {
