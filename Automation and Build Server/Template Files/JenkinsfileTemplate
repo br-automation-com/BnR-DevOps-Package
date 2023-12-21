@@ -48,6 +48,17 @@ pipeline {
         }
         stage('Deploy') {
 			parallel {
+				stage('Deploy Main')
+				{
+					when
+					{
+						branch 'main'
+					}
+					steps {
+						BuildARsimStructure(project: "${PROJECT_DIR}", configuration: "${CONFIG_NAME}");
+						powershell(returnStdout: true, script: "Rename-Item -Path ArSim.zip -NewName ArSim-${RELEASE_VERSION}.zip");
+					}
+				}
 				stage('Deploy Release Candidate')
 				{
 					when
