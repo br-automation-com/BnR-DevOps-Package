@@ -1,4 +1,5 @@
-## Automation Studio : ignore temporary files and build results (.gitignore parallel to *.apj)
+# Automation Studio 4 Template .gitignore file
+# The .gitignore file must be stored in the same folder as the .apj file. If not, adapt the starting "/" to the actual structure of the repository.
 
 # Ignore AR versions as those are not considered part of the project
 /AS/System/
@@ -7,7 +8,7 @@
 /Binaries/
 
 # Ignore debugging files
-/Diagnosis/
+/Diagnosis/**
 # To save the watch windows and task trace configurations, uncomment the following 3 lines (which makes exceptions for these files): 
 #!/Diagnosis/**/
 #!/Diagnosis/**/*.PVM
@@ -17,7 +18,7 @@
 /Temp/
 
 # Ignore upgrades as those are not considered part of the project source code
-**/Upgrades
+/Upgrades/
 
 # Ignore user settings file
 /*.set
@@ -27,6 +28,23 @@
 # Ignore is open indication
 /*.isopen
 
-# Ignore all .zip files within the project directory
+# Ignore all archive files within the project directory
 *.zip
+*.tar
+*.7z
+
+# Unnoficial strategies when using Safety. Uncomment the appropriate lines depending on whether you are using mapp Safety or Legacy Safety.  
+# mapp Safety: 
+# Ignore CPU folder in mapp Safety - ..\{ASprojectName}\Physical\{ConfigName}\{PLCname}\mappSafety\{SafetyProjectName}\C\PLC\R\CPU
+#/Physical/*/*/mappSafety/*/C/PLC/R/CPU/*
+# But include the required binary files:
+#!/Physical/*/*/mappSafety/*/C/PLC/R/CPU/src.st1
+#!/Physical/*/*/mappSafety/*/C/PLC/R/CPU/tmp.sto
+# Legacy safety: 
+# Ignore CPU folder in Legacy Safety - ..\{ASprojectName}\Physical\{ConfigName}\{PLCname}\{SafetyProjectName}\C\PLC\R\CPU
+#/Physical/*/*/*/C/PLC/R/CPU/*
+# But include the required binary files:
+#!/Physical/*/*/*/C/PLC/R/CPU/src.st1
+#!/Physical/*/*/*/C/PLC/R/CPU/tmp.sto
+
 
