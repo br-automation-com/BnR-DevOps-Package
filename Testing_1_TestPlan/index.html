@@ -1,0 +1,1623 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Testing_0_TemplateFiles/">
+      
+      
+        <link rel="next" href="../Testing_2_TDD/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Test Plan - DevOps Package</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-build-a-test-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DevOps Package" class="md-header__button md-logo" aria-label="DevOps Package" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DevOps Package
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Test Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DevOps Package" class="md-nav__button md-logo" aria-label="DevOps Package" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DevOps Package
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Project Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Project Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectManagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectManagement_0_ProjectPlanning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectManagement_1_Jira/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jira
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectManagement_2_Confluence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Confluence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectManagement_3_Bitbucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub & Bitbucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectManagement_4_OpenSourceLicensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open-Source Licensing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Version Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_01_BuildVersionFramework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Version Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_0_SummaryOfTemplateFiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_1_Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_2_Sourcetree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sourcetree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_3_Commits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_4_Branching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_5_ResolvingMergeConflicts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resolving Merge Conflicts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_6_CodeReview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_7_Versioning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_8_Submodules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submodules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_9_Hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_10_ASProjectSettings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AS Project Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VersionControl_11_MigratingFromSVN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrating from SVN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Testing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing_0_TemplateFiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Test Plan
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Test Plan
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyze-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyze the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-the-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design the Test Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design the Test Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Scope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Schedule
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-test-module-and-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the Test Module and Test Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-execution-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Execution and Reporting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing_2_TDD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test Driven Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing_3_BnRUnitTesting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B&R Unit Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing_4_IntegrationTesting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing_5_ManualTesting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manual Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Automation and Build Server
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Automation and Build Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_0_TemplateFiles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_1_HowToUseJenkins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use Jenkins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_2_BnRJenkinsHelperLib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B&R-Jenkins Helper Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_3_GettingStarted/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_4_CreateDocker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create Jenkins Agent Docker Container
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_5_CreateJenkinsProject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create Jenkins Project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_6_CustomizingTheJenkinsfile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customizing the Jenkinsfile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_7_IntegrationWithBitbucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration with Bitbucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AutomationBuildServer_8_AutomatedDeployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automated Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyze-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyze the Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-the-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design the Test Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design the Test Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Scope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Schedule
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-test-module-and-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the Test Module and Test Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-execution-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Execution and Reporting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="how-to-build-a-test-plan">How to Build a Test Plan</h1>
+<h2 id="overview">Overview</h2>
+<p>The testing process begins with a solid and complete test plan that is closely linked to the project spec.</p>
+<p>The test plan must be thoughtfully written before testing and development begin. The requirements + project specification + test plan all go together. These should be completed before you write any code.</p>
+<p>In this section, we will identify recommendations for building such a test plan. The overall  steps are as follows:</p>
+<p><img alt="" src="../img/Testing53.png" /></p>
+<h2 id="analyze-the-application">Analyze the Application</h2>
+<p>The first step in building a test plan is to fully understand the application under test. <strong>Therefore, the specification must be written before you can create your test plan</strong>.</p>
+<ul>
+<li>For new projects, the base functionality must be defined</li>
+<li>For new features in an existing project, the details for that feature must be defined</li>
+</ul>
+<p>Remember: If the project has not been defined yet, then you cannot write reliable or quality code (not to mention, quality tests!)</p>
+<h2 id="design-the-test-strategy">Design the Test Strategy</h2>
+<p>There are several things that must be defined in the overall test strategy:</p>
+<ol>
+<li>Testing Scope</li>
+<li>Testing Type</li>
+<li>Resource Planning</li>
+<li>Testing Schedule</li>
+</ol>
+<h3 id="testing-scope">Testing Scope</h3>
+<p>Based on the project specification, define what will and will not be tested.</p>
+<h3 id="testing-type">Testing Type</h3>
+<p>This DevOps package provides direct recommendations on unit testing, mapp View integration testing, and manual testing. </p>
+<p>Additional integration testing strategies will be added in the future.</p>
+<h3 id="resource-planning">Resource Planning</h3>
+<p>Define at least one personnel resource for the following 4 testing roles. Note that one single person can hold multiple roles:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test manager</td>
+<td>Defines the tests</td>
+</tr>
+<tr>
+<td>Test developer</td>
+<td>Writes the automated tests</td>
+</tr>
+<tr>
+<td>Manual tester</td>
+<td>Executes the manual tests. Does not analyze the results of any subjective tests (if applicable)<br />Note: This should not be the programmer. Ideally should be an experience user of the machine under test</td>
+</tr>
+<tr>
+<td>Manual test approver</td>
+<td>Analyzes the outcome of the subjective manual tests (if applicable)</td>
+</tr>
+</tbody>
+</table>
+<p>Then, define the test environments: </p>
+<table>
+<thead>
+<tr>
+<th>Test Environment</th>
+<th>Description / Action Items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automated test environment</td>
+<td>Refer to the Build Server section of this DevOps package</td>
+</tr>
+<tr>
+<td>On-machine testing</td>
+<td>&bull; Identify the point of contact for scheduling machine time<br />&bull; Identify any materials and prerequisites needed for on-machine testing  <br />&bull; Estimate the time expected to complete the manual tests<br />&bull; Identify the testing location (OEM or end user)<br />&bull; Remember: manual testing is a distinct step from commissioning!</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testing-schedule">Testing Schedule</h3>
+<p>Identify how often you will run the automated tests. Refer to the Build Server section of this DevOps package. </p>
+<p>Identify when and how often you will run the manual tests, first in simulation and then on machine.</p>
+<p>Plan a time to review all test results and define the next steps. </p>
+<h2 id="define-the-test-module-and-test-cases">Define the Test Module and Test Cases</h2>
+<p>Definitions:</p>
+<ul>
+<li>A test module describes an overall functionality on the machine. This is used for organizing all of the test cases.</li>
+<li>A test case is a specific, granular test condition. Several test cases are used to fully test a test module.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>Test Module: Alarm System<ul>
+<li>Test Case 1: Confirm that the alarm history successfully exports</li>
+<li>Test Case 2: Confirm that the AlarmList widget on the HMI properly displays the alarms</li>
+<li>…</li>
+</ul>
+</li>
+<li>Test Module: Recipe System<ul>
+<li>Test Case 1: Confirm you are warned / prompted if the default recipe is missing</li>
+<li>Test Case 2: Confirm that you can edit the active recipe and the changes are applied immediately</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<p>Directives:</p>
+<ul>
+<li>All test modules and corresponding test cases must be defined. This should be done within the testing template excel sheet that is provided in this DevOps package</li>
+<li>Identify whether each test case will be implemented with unit testing or manual testing</li>
+<li>Identify who has ownership of each test case </li>
+</ul>
+<p><br></p>
+<p>Below is a list of generic tests that should be applied to every machine. This list will continue to be expanded to over time.</p>
+<p>HMI</p>
+<ul>
+<li>All inputs should have proper limits (&gt;max and &lt;min are not permitted)</li>
+<li>Language changes accordingly as well as all the text fits in the given spaces in all languages</li>
+<li>Unit conversion functions</li>
+<li>Confirm that inputs are locked out for users that don't have access. Part of the manual tests.</li>
+<li>Confirm the alarm list is visible / working properly, and that alarms are acknowledgeable</li>
+<li>If HMI gets disconnected from the PLC (in hardware topologies where this is possible), test that recovery is possible, but also that commands don't happen unintendedly after disconnect (i.e. if you are manually jogging, disconnect, don't keep jogging indefinitely) (i.e. if you are in automatic mode, HMI disconnects, is it ok to continue?)</li>
+<li>Manually test for system responsiveness, if it is "good enough“</li>
+</ul>
+<p>Basic Motion</p>
+<ul>
+<li>E-stop, confirm it works</li>
+<li>Homing, confirm it works and it's repeatable</li>
+<li>Software limits (confirm the axis stops after reaching the limit)</li>
+<li>Hardware limits (confirm the axis stops after reaching the limit and before the hard stop)</li>
+<li>Jog, confirm it works</li>
+<li>Error conditions and recovery - examples: lag error, loss of comm from the PLC to the drive, etc. Will depend on the app, but think about these error conditions and confirm that you can successfully recover.</li>
+</ul>
+<p>IO</p>
+<ul>
+<li>Check that the ModuleOKs are monitored and that the response is as intended (just an alarm, stop the machine, service mode, etc)</li>
+<li>For any IO points that have a status feedback, make sure you're monitoring them and doing something with that information. The test here is regarding what you actually do with that status information. Confirm that the next step works.</li>
+<li>Fieldbuses- if disconnected, check you can recover, and that the machine responds in the way that you need it to.</li>
+</ul>
+<p>Data management</p>
+<ul>
+<li>Wear level monitoring info that came in AR4.9, make sure you are using that information and that the response is as intended.</li>
+<li>If your file device storage medium gets full, check that upon trying to save new data you are appropriately warned and that you don't lose any data</li>
+</ul>
+<h2 id="test-execution-and-reporting">Test Execution and Reporting</h2>
+<p>Automated Tests</p>
+<ul>
+<li>The automation server executes the tests in ARsim and provides a report on the automated tests</li>
+<li>Refer to the Automation Server section of this DevOps package</li>
+</ul>
+<p>Manual Tests</p>
+<ul>
+<li>Manual tests are manually executed and reported</li>
+<li>Manual testing should be done only after the Automated Tests are in a good state (mostly or fully all passing)</li>
+<li>To help keep track of the status of the manual tests, there is a template Excel file provided in this package</li>
+<li>Details for how to use the file are included on the first tab (“Overview”)</li>
+<li>Be sure to identify the software version you are testing in the sheet, so that it is clear exactly what version you have tested</li>
+</ul>
+<p>At this step you must also define the overall test criteria for what constitutes pass/fail. At what point do you consider a feature or the machine as a whole "done"?</p>
+<p>It is indeed possible that a machine can ship with certain defects (failed tests). It is up to the project manager discretion whether a specific test is a show-stopper or not. Ask yourself: Is the cost of delaying shipment worth the defect?</p>
+<p>Execute all tests at least once. For each failed test, identify if the test case is a showstopper or not. This saves you from having to make this decision for every single test. In practice you only need to decide for tests that fail at any point. Alternatively, you can define a priority for each failed test. Then pick a cutoff point where the machine can ship despite defects.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
