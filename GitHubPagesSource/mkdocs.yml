@@ -1,0 +1,54 @@
+site_name: DevOps Package
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    
+nav:
+  - Introduction: 'index.md'
+  - Project Management: 
+    - 'Overview': 'ProjectManagement.md'
+    - 'Project Planning': 'ProjectManagement_0_ProjectPlanning.md'
+    - 'Jira': 'ProjectManagement_1_Jira.md'
+    - 'Confluence': 'ProjectManagement_2_Confluence.md'
+    - 'GitHub & Bitbucket': 'ProjectManagement_3_Bitbucket.md'
+    - 'Open-Source Licensing': 'ProjectManagement_4_OpenSourceLicensing.md'
+  - Version Control:
+    - 'Overview': 'VersionControl.md'
+    - 'Build Version Framework': 'VersionControl_01_BuildVersionFramework.md'
+    - 'Template Files': 'VersionControl_0_SummaryOfTemplateFiles.md'
+    - 'Git': 'VersionControl_1_Git.md'
+    - 'Sourcetree': 'VersionControl_2_Sourcetree.md'
+    - 'Commits': 'VersionControl_3_Commits.md'
+    - 'Branching': 'VersionControl_4_Branching.md'
+    - 'Resolving Merge Conflicts': 'VersionControl_5_ResolvingMergeConflicts.md'
+    - 'Code Review': 'VersionControl_6_CodeReview.md'
+    - 'Versioning': 'VersionControl_7_Versioning.md'
+    - 'Submodules': 'VersionControl_8_Submodules.md'
+    - 'Hooks': 'VersionControl_9_Hooks.md'
+    - 'AS Project Settings': 'VersionControl_10_ASProjectSettings.md'
+    - 'Migrating from SVN': 'VersionControl_11_MigratingFromSVN.md'
+  - Testing:
+    - 'Overview': 'Testing.md'
+    - 'Template Files': 'Testing_0_TemplateFiles.md'
+    - 'Test Plan': 'Testing_1_TestPlan.md'
+    - 'Test Driven Development': 'Testing_2_TDD.md'
+    - 'B&R Unit Testing': 'Testing_3_BnRUnitTesting.md'
+    - 'Integration Testing': 'Testing_4_IntegrationTesting.md'
+    - 'Manual Testing': 'Testing_5_ManualTesting.md'
+  - Automation and Build Server:
+    - 'Overview': 'AutomationBuildServer.md'
+    - 'Template Files': 'AutomationBuildServer_0_TemplateFiles.md'
+    - 'How to use Jenkins': 'AutomationBuildServer_1_HowToUseJenkins.md'
+    - 'B&R-Jenkins Helper Library': 'AutomationBuildServer_2_BnRJenkinsHelperLib.md'
+    - 'Getting Started': 'AutomationBuildServer_3_GettingStarted.md'
+    - 'Create Jenkins Agent Docker Container': 'AutomationBuildServer_4_CreateDocker.md'
+    - 'Create Jenkins Project': 'AutomationBuildServer_5_CreateJenkinsProject.md'
+    - 'Customizing the Jenkinsfile': 'AutomationBuildServer_6_CustomizingTheJenkinsfile.md'
+    - 'Integration with Bitbucket': 'AutomationBuildServer_7_IntegrationWithBitbucket.md'
+    - 'Automated Deployment': 'AutomationBuildServer_8_AutomatedDeployment.md'
+
+header_pages:
+ - DevOpsPackageIntro.md
+ - AutomationAndBuildServer.md
