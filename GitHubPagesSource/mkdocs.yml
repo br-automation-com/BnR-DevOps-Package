@@ -52,3 +52,6 @@ nav:
 header_pages:
  - DevOpsPackageIntro.md
  - AutomationAndBuildServer.md
+
+markdown_extensions:
+  - attr_list
