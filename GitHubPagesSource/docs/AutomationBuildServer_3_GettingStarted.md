@@ -32,8 +32,12 @@ Build and Automation Server
 * We recommend installing Jenkins with the “recommended plugins” option
     * And manually add the “Office 365 Connector” plugin
     * Configure Extended E-mail Notification plugin
+    * Manually add the "Coverage" plugin
 * Python requirements
-    * pip install requests junitparser GitPython
+    * 
 
+        ```
+            C:\>pip install requests junitparser GitPython requests junitparser pytest pytest-order asyncua opcua selenium gcov
+        ```
 ![](img%5CAutomation%20and%20Build%20Server6.png)
 

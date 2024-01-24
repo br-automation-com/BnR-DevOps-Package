@@ -245,3 +245,30 @@ Steps:
 Breakpoints can be set directly in the unit test code. Therefore, when a unit test fails, use the debugger to troubleshoot the problem.
 
 ![](img%5CTesting41.png)
+
+## Code Coverage
+
+With code coverage enabled you can see how much of you code is covered by your testing.  This can help assess the quality of your test cases.  
+Code coverage in Automation Studio only works for C/C++ tasks/libraries and GCC 6.3.0
+
+[EmbGCov-Demo project](https://github.com/br-automation-com/EmbGcov-Demo)
+
+Usage:
+
+1. Install gcov.  See [here](https://gcovr.com/en/stable/installation.html) for installation instructions
+2. Add the Unittest solution with version 2.0.1.65
+3. Add the EmbGcov and EmbGcovW library ( Make sure to deploy both libraries in the PLC )
+4. Change the GCC version to '6.3.0' and add the '\Logical\Libraries\EmbGcov' to the additional include directories  
+	![](img%5CTesting - gcov - CompilerAndAdditionIncludeDirs.jpg)
+5. Add the '--codecoverage' to the Additional build options in the task and or library
+	![](img%5CTesting - gcov - AddCoverageToTask.jpg)
+6. Extend the TEARDOWN_SET
+	* Include the EmbGcov.h
+    * Add the function 'EmbGcovExit();' so that after the test is complete the data is saved to the harddrive.
+    * In case of a pure C task add a dummy C++ file with the bur_heap_size declaration. This will add some implementations we need.
+    * In case you want to use code coverage on a library add a dummy function with the 'EmbGcovExit();' as well. ( If it's a dynamic library please add the function in a CPP file )
+7. Run the python script to generate the report
+	* 
+        ```
+            C:\>python ProcessCodeCoverage.py --project <project path> --config TS_UnitTest_Sample
+        ```
