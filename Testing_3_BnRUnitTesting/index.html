@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1001,6 +1001,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#code-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Coverage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1453,6 +1462,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#code-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Coverage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1585,7 +1603,7 @@
 <tbody>
 <tr>
 <td>IF (condition) THEN<br>&emsp;//code<br>ELSIF(condition) THEN<br>&emsp;//code<br>ELSE<br>&emsp;//code<br>END_IF</td>
-<td>if(condition) {<br>&emsp;//code<br>} <br>else if(condition) {<br>&emsp;//code<br>} <br>else {<br>&emsp;//code<br>}</td>
+<td _wzxhzdk:17_wzxhzdk:21_code_wzxhzdk:18_="<br>&emsp;//code<br>">if(condition) {<br>&emsp;//code<br>} <br>else if(condition) {<br>&emsp;//code<br>} <br>else</td>
 </tr>
 </tbody>
 </table>
@@ -1766,6 +1784,33 @@
 <h2 id="debugging">Debugging</h2>
 <p>Breakpoints can be set directly in the unit test code. Therefore, when a unit test fails, use the debugger to troubleshoot the problem.</p>
 <p><img alt="" src="../img/Testing41.png" /></p>
+<h2 id="code-coverage">Code Coverage</h2>
+<p>With code coverage enabled you can see how much of you code is covered by your testing.  This can help assess the quality of your test cases.<br />
+Code coverage in Automation Studio only works for C/C++ tasks/libraries and GCC 6.3.0</p>
+<p><a href="https://github.com/br-automation-com/EmbGcov-Demo">EmbGCov-Demo project</a></p>
+<p>Usage:</p>
+<ol>
+<li>Install gcov.  See <a href="https://gcovr.com/en/stable/installation.html">here</a> for installation instructions</li>
+<li>Add the Unittest solution with version 2.0.1.65</li>
+<li>Add the EmbGcov and EmbGcovW library ( Make sure to deploy both libraries in the PLC )</li>
+<li>Change the GCC version to '6.3.0' and add the '\Logical\Libraries\EmbGcov' to the additional include directories<br />
+<img alt="" src="../img/Testing%20-%20gcov%20-%20CompilerAndAdditionIncludeDirs.jpg" /></li>
+<li>Add the '--codecoverage' to the Additional build options in the task and or library
+    <img alt="" src="../img/Testing%20-%20gcov%20-%20AddCoverageToTask.jpg" /></li>
+<li>Extend the TEARDOWN_SET<ul>
+<li>Include the EmbGcov.h</li>
+<li>Add the function 'EmbGcovExit();' so that after the test is complete the data is saved to the harddrive.</li>
+<li>In case of a pure C task add a dummy C++ file with the bur_heap_size declaration. This will add some implementations we need.</li>
+<li>In case you want to use code coverage on a library add a dummy function with the 'EmbGcovExit();' as well. ( If it's a dynamic library please add the function in a CPP file )</li>
+</ul>
+</li>
+<li>Run the python script to generate the report<ul>
+<li>
+<p><code>C:\&gt;python ProcessCodeCoverage.py --project &lt;project path&gt; --config TS_UnitTest_Sample</code></p>
+</li>
+</ul>
+</li>
+</ol>
 
 
 

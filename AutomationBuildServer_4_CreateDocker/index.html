@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1316,9 +1316,14 @@
 <p>Add the Jenkins secret from the node creation to JENKINS_SECRET, and adjust the JENKINS_AGENT_NAME with the name of the node:</p>
 <p><img alt="" src="../img/Automation%20and%20Build%20Server19.png" /></p>
 <p><br></p>
+<p>Copy any required Automation Studio upgrade files to the AS_Upgrades directory</p>
+<p>For any 3rd party hardware files copy them to the AS_3rd_Party_Files.  These can be copied from you local installation folder (e.g. C:\ProgramData\BR\AS412\Hardware)</p>
 <p>Create the Docker image:</p>
-<p><img alt="" src="../img/Automation%20and%20Build%20Server20.png" /></p>
-<p><br></p>
+<pre><code>C:\&gt;docker build -t as_412 -f .\Dockerfile .
+</code></pre>
+<p>Deploy the Docker container</p>
+<pre><code>C:\&gt;docker create --name AS_412 --restart unless-stopped -v &quot;C:\Program Files\Jenkins\jobs:C:\Program Files\jenkins\jobs&quot; -v &quot;C:\workspace:C:\jenkins\workspace&quot; -v &quot;C:\Jenkins Setup\docker\upgrades\additional_upgrades:C:\additional_upgrades&quot; as_412 
+</code></pre>
 
 
 
