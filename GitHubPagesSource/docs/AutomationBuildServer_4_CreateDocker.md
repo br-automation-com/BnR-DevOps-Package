@@ -79,9 +79,18 @@ Add the Jenkins secret from the node creation to JENKINS\_SECRET, and adjust the
 
 <br>
 
+Copy any required Automation Studio upgrade files to the AS_Upgrades directory
+
+For any 3rd party hardware files copy them to the AS_3rd_Party_Files.  These can be copied from you local installation folder (e.g. C:\ProgramData\BR\AS412\Hardware)
+
 Create the Docker image:
 
-![](img%5CAutomation%20and%20Build%20Server20.png)
+```
+C:\>docker build -t as_412 -f .\Dockerfile .
+```
 
-<br>
+Deploy the Docker container
 
+```
+C:\>docker create --name AS_412 --restart unless-stopped -v "C:\Program Files\Jenkins\jobs:C:\Program Files\jenkins\jobs" -v "C:\workspace:C:\jenkins\workspace" -v "C:\Jenkins Setup\docker\upgrades\additional_upgrades:C:\additional_upgrades" as_412 
+```
