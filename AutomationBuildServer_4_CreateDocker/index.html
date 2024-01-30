@@ -1319,11 +1319,11 @@
 <p>Copy any required Automation Studio upgrade files to the AS_Upgrades directory</p>
 <p>For any 3rd party hardware files copy them to the AS_3rd_Party_Files.  These can be copied from you local installation folder (e.g. C:\ProgramData\BR\AS412\Hardware)</p>
 <p>Create the Docker image:</p>
-<pre><code>C:\&gt;docker build -t as_412 -f .\Dockerfile .
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C:\&gt;docker build -t as_412 -f .\Dockerfile .
+</span></code></pre></div>
 <p>Deploy the Docker container</p>
-<pre><code>C:\&gt;docker create --name AS_412 --restart unless-stopped -v &quot;C:\Program Files\Jenkins\jobs:C:\Program Files\jenkins\jobs&quot; -v &quot;C:\workspace:C:\jenkins\workspace&quot; -v &quot;C:\Jenkins Setup\docker\upgrades\additional_upgrades:C:\additional_upgrades&quot; as_412 
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>C:\&gt;docker create --name AS_412 --restart unless-stopped -v &quot;C:\Program Files\Jenkins\jobs:C:\Program Files\jenkins\jobs&quot; -v &quot;C:\workspace:C:\jenkins\workspace&quot; -v &quot;C:\Jenkins Setup\docker\upgrades\additional_upgrades:C:\additional_upgrades&quot; as_412 
+</span></code></pre></div>
 
 
 
@@ -1370,7 +1370,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>

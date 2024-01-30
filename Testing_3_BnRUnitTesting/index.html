@@ -1603,7 +1603,7 @@
 <tbody>
 <tr>
 <td>IF (condition) THEN<br>&emsp;//code<br>ELSIF(condition) THEN<br>&emsp;//code<br>ELSE<br>&emsp;//code<br>END_IF</td>
-<td _wzxhzdk:17_wzxhzdk:21_code_wzxhzdk:18_="<br>&emsp;//code<br>">if(condition) {<br>&emsp;//code<br>} <br>else if(condition) {<br>&emsp;//code<br>} <br>else</td>
+<td _wzxhzdk:18_wzxhzdk:22_code_wzxhzdk:19_="<br>&emsp;//code<br>">if(condition) {<br>&emsp;//code<br>} <br>else if(condition) {<br>&emsp;//code<br>} <br>else</td>
 </tr>
 </tbody>
 </table>
@@ -1655,63 +1655,63 @@
 </li>
 </ol>
 <p>For simple tests, this can be accomplished as shown below:</p>
-<pre><code>_TEST testCase1(void)
-
-{
-
-// Arrange
-
-    instMyCalc.CalcOperator = splMyCalcOPERATOR_ADD; 
-    instMyCalc.Param1 = 1; 
-    instMyCalc.Param2 = 2;
-
-// Act
-
-    MyCalculator(&amp;instMyCalc);
-
-// Assert
-
-    TEST_ASSERT_EQUAL_INT(3, instMyCalc.Result ); 
-    TEST_ASSERT_EQUAL_INT(ERR_OK, instMyCalc.Status );
-
-}
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>_TEST testCase1(void)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>{
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>// Arrange
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    instMyCalc.CalcOperator = splMyCalcOPERATOR_ADD; 
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    instMyCalc.Param1 = 1; 
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    instMyCalc.Param2 = 2;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>// Act
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    MyCalculator(&amp;instMyCalc);
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>// Assert
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    TEST_ASSERT_EQUAL_INT(3, instMyCalc.Result ); 
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    TEST_ASSERT_EQUAL_INT(ERR_OK, instMyCalc.Status );
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>}
+</span></code></pre></div>
 <p>For more advanced tests or tests for asynchronous function blocks, these sections should be implemented in a case statement.</p>
 <p>This allows the FUBs to be called until they complete the asynchronous action (since they are called within _CYCLIC_SET).</p>
 <p>For example: </p>
-<pre><code>_TEST PowerOn(void)
-{   
-    TIMEOUT_TEST_CASE    
-    switch (TestState)    
-  {        
-        case TEST_ARRANGE:          
-            TestState = TEST_ACT;        
-        break;        
-
-        case TEST_ACT:            
-            switch (ActSubState)            
-            {                
-                case 0:                    
-                    AxisControl.Command.Power = true;                    
-                    ActSubState = 1;                
-                break;                
-
-                case 1:                    
-                    TEST_BUSY_CONDITION(AxisControl.Status.Busy == true);                    
-                    TestState = TEST_ASSERT;                
-                break;            
-            }        
-        break;        
-
-        case TEST_ASSERT:            
-            TEST_ASSERT(AxisControl.Status.IsPowered);            
-            TEST_DONE;        
-        break;    
-    }
-
-    TEST_BUSY;
-}
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>_TEST PowerOn(void)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{   
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    TIMEOUT_TEST_CASE    
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    switch (TestState)    
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  {        
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        case TEST_ARRANGE:          
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            TestState = TEST_ACT;        
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        break;        
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        case TEST_ACT:            
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            switch (ActSubState)            
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            {                
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                case 0:                    
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                    AxisControl.Command.Power = true;                    
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                    ActSubState = 1;                
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                break;                
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>                case 1:                    
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                    TEST_BUSY_CONDITION(AxisControl.Status.Busy == true);                    
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>                    TestState = TEST_ASSERT;                
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>                break;            
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            }        
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        break;        
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        case TEST_ASSERT:            
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            TEST_ASSERT(AxisControl.Status.IsPowered);            
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            TEST_DONE;        
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        break;    
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    }
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    TEST_BUSY;
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>}
+</span></code></pre></div>
 <h2 id="return-statements">Return Statements</h2>
 <p>Each test must always provide a return statement in every scan of the test. The possible return statements are Busy, Abort, or Done (full list shown below). </p>
 <p><img alt="" src="../img/Testing34.png" /></p>
@@ -1806,7 +1806,8 @@ Code coverage in Automation Studio only works for C/C++ tasks/libraries and GCC 
 </li>
 <li>Run the python script to generate the report<ul>
 <li>
-<p><code>C:\&gt;python ProcessCodeCoverage.py --project &lt;project path&gt; --config TS_UnitTest_Sample</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    C:\&gt;python ProcessCodeCoverage.py --project &lt;project path&gt; --config TS_UnitTest_Sample
+</span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -1857,7 +1858,7 @@ Code coverage in Automation Studio only works for C/C++ tasks/libraries and GCC 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
