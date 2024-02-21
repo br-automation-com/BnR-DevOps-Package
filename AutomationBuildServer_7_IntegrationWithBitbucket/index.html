@@ -1209,6 +1209,7 @@
 <p>Select “HTTP access token” in the menu on the left. Then click "Create token":</p>
 <p><img alt="" src="../img/Automation%20and%20Build%20Server40.png" /></p>
 <p>Add a token name. Set the Permissions to “Repository read”. Click “Create”:</p>
+<p><em>Note: see below if using Jenkins to setup the webhook for additional options</em></p>
 <p><img alt="" src="../img/Automation%20and%20Build%20Server41.png" /></p>
 <p>Make sure to copy the generated token as you will not be able view this again.</p>
 <p><img alt="" src="../img/Automation%20and%20Build%20Server42.png" /></p>
@@ -1227,6 +1228,40 @@
 <p><img alt="" src="../img/Automation%20and%20Build%20Server47.png" /></p>
 <p>After saving, the repositories will be scanned:</p>
 <p><img alt="" src="../img/Automation%20and%20Build%20Server48.png" /></p>
+<p>To automatically start a build when a commit is pushed to the repository you have 2 options.</p>
+<p><strong>Allow Jenkins to automatically setup the webhook on Bitbucket</strong></p>
+<p>When creating the access token in Bitbucket give the permission </p>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Project%20Admin%20Rights.png" style="border: 1px solid gray;" /></p>
+<p>Then configure your project in Jenkins</p>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Configure%20Jenkins.png" /></p>
+<ul>
+<li>Add the option "Override hook management" to the repository settings</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Override%20Hook%20Management.png" style="border: 1px solid gray;" /></p>
+<ul>
+<li>Select the "Use item credentials for hook management" option</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20item%20credentials%20for%20hook%20management.png" style="border: 1px solid gray;" /></p>
+<ul>
+<li>Once saved Jenkins will automatically add the required webhook to the Bitbucket repository</li>
+</ul>
+<p><strong>To manually setup the webhook in Bitbucket</strong></p>
+<ul>
+<li>First goto the settings on the Bitbucket project</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Bitbucket%20repository%20setttings.png" style="border: 1px solid gray;" /></p>
+<ul>
+<li>Goto the webhooks section</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Bitbucket%20webhooks.png" style="border: 1px solid gray;" /></p>
+<ul>
+<li>Give your new webhook a name and change the url to http://&lt;jenkins_url&gt;:8080/bitbucket-scmsource-hook/notify?server_url=https%3A%2F%2F&lt;bitbucket_url&gt;</li>
+<li>Select the following options for the webhook</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Bitbucket%20webhook%20settings.png" style="border: 1px solid gray;" /></p>
+<ul>
+<li>And then save the webhook</li>
+</ul>
 
 
 
