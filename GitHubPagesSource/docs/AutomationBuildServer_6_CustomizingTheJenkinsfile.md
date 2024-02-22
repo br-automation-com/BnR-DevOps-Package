@@ -225,3 +225,41 @@ Required steps:
 * If you do choose to upload, make sure you have edited the REPO\_NAME and REPO\_ORGANIZATION variables at the top of the Jenkinsfile accordingly
 
 ![](img%5CAutomation%20and%20Build%20Server38.png)
+
+## Verifying your Jenkinsfile
+
+One common complaint when working with a Jenkinsfile is how to verify that the Jenkinsfile is syntactically correct without running it on Jenkins.  This can result in build failures simply due to syntax errors in your Jenkinsfile.
+
+There is a [Jenkins Pipeline Linter Connector](https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector) extension to VS Code that allows you to verify you Jenkinsfile without running it on Jenkins.
+
+* First install the extension in VS Code
+
+* Create a token in Jenkins to use for authorization
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20Jenkins%20User%20Configure.png)
+
+* Add new API token
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20Jenkins%20New%20API%20Token.png)
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20Jenkins%20Generate%20API%20token.png)
+
+* Be sure to copy the token
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20Jenkins%20API%20Token.png)
+
+* Setup extension 
+Automation and Build Server - VS Code Settings.png
+
+
+* Add token and Jenkins URL to extension settings, URL = http://&lt;jenkins_url&gt;:8080/pipeline-model-converter/validate
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20VS%20Code%20linter%20connector.png)
+
+* Run command to verify your Jenkinsfile using the Command Pallete (Ctrl + Shift + P)
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20VS%20Code%20Validate%20Jenkinsfile.png)
+
+* Errors in your Jenkinsfile will be shown in the output window of VS Code
+
+![](img%5CAutomation%20and%20Build%20Server%20-%20VS%20Code%20Jenkinsfile%20error.png)
