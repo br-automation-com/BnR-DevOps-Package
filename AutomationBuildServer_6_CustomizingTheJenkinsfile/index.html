@@ -1357,6 +1357,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verifying-your-jenkinsfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying your Jenkinsfile
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1657,6 +1666,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verifying-your-jenkinsfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying your Jenkinsfile
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1903,6 +1921,45 @@
 <li>If you do choose to upload, make sure you have edited the REPO_NAME and REPO_ORGANIZATION variables at the top of the Jenkinsfile accordingly</li>
 </ul>
 <p><img alt="" src="../img/Automation%20and%20Build%20Server38.png" /></p>
+<h2 id="verifying-your-jenkinsfile">Verifying your Jenkinsfile</h2>
+<p>One common complaint when working with a Jenkinsfile is how to verify that the Jenkinsfile is syntactically correct without running it on Jenkins.  This can result in build failures simply due to syntax errors in your Jenkinsfile.</p>
+<p>There is a <a href="https://marketplace.visualstudio.com/items?itemName=janjoerke.jenkins-pipeline-linter-connector">Jenkins Pipeline Linter Connector</a> extension to VS Code that allows you to verify you Jenkinsfile without running it on Jenkins.</p>
+<ul>
+<li>
+<p>First install the extension in VS Code</p>
+</li>
+<li>
+<p>Create a token in Jenkins to use for authorization</p>
+</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Jenkins%20User%20Configure.png" /></p>
+<ul>
+<li>Add new API token</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Jenkins%20New%20API%20Token.png" /></p>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Jenkins%20Generate%20API%20token.png" /></p>
+<ul>
+<li>Be sure to copy the token</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20Jenkins%20API%20Token.png" /></p>
+<ul>
+<li>
+<p>Setup extension 
+Automation and Build Server - VS Code Settings.png</p>
+</li>
+<li>
+<p>Add token and Jenkins URL to extension settings, URL = http://&lt;jenkins_url&gt;:8080/pipeline-model-converter/validate</p>
+</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20VS%20Code%20linter%20connector.png" /></p>
+<ul>
+<li>Run command to verify your Jenkinsfile using the Command Pallete (Ctrl + Shift + P)</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20VS%20Code%20Validate%20Jenkinsfile.png" /></p>
+<ul>
+<li>Errors in your Jenkinsfile will be shown in the output window of VS Code</li>
+</ul>
+<p><img alt="" src="../img/Automation%20and%20Build%20Server%20-%20VS%20Code%20Jenkinsfile%20error.png" /></p>
 
 
 
