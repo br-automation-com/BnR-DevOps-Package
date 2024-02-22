@@ -9,6 +9,7 @@
 * [Public link to the library on GitHub](https://github.com/br-automation-com/BnR-Jenkins-Helper-Library)
     * The Groovy scripts are located within the “vars” folder on the repo
     * The Python scripts that the Groovy scripts utilize are located within the “resources\\scripts” folder on the repo
+    * Additional documentation can be found [here](https://br-automation-com.github.io/BnR-Jenkins-Helper-Library/)
 * These scripts have been tested in AS4.7 and above. Prior AS versions may work, but they are currently untested.
 
 ## Add to Jenkins Server
