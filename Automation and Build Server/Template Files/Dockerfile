@@ -99,3 +99,6 @@ RUN Get-ChildItem "C:\Temp\AS_Upgrades" -Filter *.exe | Foreach-Object { \
     & $_.FullName -G='C:\BrAutomation' -V='C:\BrAutomation\AS412' -R | Out-Null; \
     }
 RUN Remove-Item -Path C:/Temp/AS_Upgrades -Force -Recurse
+
+# install any XDD files
+COPY AS_3rd_Party_Files/ C:/ProgramData/BR/AS412/Hardware/Modules
