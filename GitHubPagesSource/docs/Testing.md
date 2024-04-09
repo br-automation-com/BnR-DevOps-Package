@@ -2,11 +2,11 @@
 
 ## Setting the Stage
 
-Testing can either be  __automated__  or  __manual__. 
+Testing can either be  __automated__  or  __manual__.
 
-In DevOps, the goal is that you have as much automated testing as possible. Therefore, the primary focus of this package is automated testing. 
+In DevOps, the goal is that you have as much automated testing as possible. Therefore, the primary focus of this package is automated testing.
 
-Nonetheless, some manual testing will inevitably be necessary. Therefore, manual testing strategies are provided at the end. 
+Nonetheless, some manual testing will inevitably be necessary. Therefore, manual testing strategies are provided at the end.
 
 ## Definition
 
@@ -16,7 +16,7 @@ A consistent set of inputs is used for each test. This allows multiple programme
 
 The tests are run automatically - not by hand (manually) by each engineer. 
 
-If a bug is discovered, a new test is written to catch the bug so that once it is fixed, you will always be checking to confirm it does not return in the future. 
+If a bug is discovered, a new test is written to catch the bug so that once it is fixed, you will always be checking to confirm it does not return in the future.
 
 ## Types of Tests
 
@@ -39,17 +39,3 @@ If a bug is discovered, a new test is written to catch the bug so that once it i
 |You can’t write the test until you know the design |![](img%5CTesting12.png) |If you don’t know enough about the requirements to write a test, then you don’t have enough information to write quality code. We must avoid the tendency to start coding before a proper plan is in place |
 |Unit testing is hard! |![](img%5CTesting13.png) |It can be difficult at first, but like most things it gets easier the more you do it <br> &emsp;&bull; It is definitely difficult if you wait to add unit tests at the end (don’t do that!) <br>&emsp;&bull; This could also be an indication that your design is not easily testable (too much functionality in a single function / function block / task, etc) <br>&emsp;&bull; Not everything is able to be unit tested. But in those cases, you will rely on manual testing |
 |I don’t know how! |![](img%5CTesting14.png) |Hence why this DevOps package exists! |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
