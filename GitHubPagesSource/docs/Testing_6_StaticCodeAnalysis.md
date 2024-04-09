@@ -53,3 +53,30 @@ In the Automation Studio project goto to the Project->Change Runtime Versions...
 ```bat
 "$(AS_PROJECT_PATH)/Logical/StaticCodeAnalysis/RunClangTidy.bat" "$(AS_PROJECT_PATH)" $(AS_CONFIGURATION)
 ```
+
+## Build Project
+
+Now on successful builds of the Automation Studio project clang-tidy will automatically be run.  Any warnings from clang-tidy will show up as warnings in Output Results window.
+
+![Results](img%5CTesting%20-%20Static%20Code%20Analysis%20-%20Clang-warnings.png)
+
+Double clicking on the warning Automation Studio will open the file and highlight the line with the potential problem
+
+![potential problem](img%5CTesting%20-%20Static%20Code%20Analysis%20-%20Opened%20Warning.png)
+
+## Customization
+
+By default we have enabled all checks except llvmlibc-restrict-system-libc-headers.  If you need to disable any additional checks edit the clang-tidy.opt file.
+
+See [here](https://clang.llvm.org/extra/clang-tidy/checks/list.html) for a full list of available checks
+
+Any checks that you **do not** want add a line to the Checks: section of the file with a - infront of the check name (Note that wildcards are supported)
+
+For example if you want to disable all of google's checks:
+
+```text
+Checks: "*,
+        -llvmlibc-restrict-system-libc-headers*,
+        -google-*,
+        "
+```
