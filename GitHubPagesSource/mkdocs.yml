@@ -5,6 +5,9 @@ theme:
   features:
     - navigation.instant
     - content.code.copy
+
+plugins:
+  - macros
     
 nav:
   - Introduction: 'index.md'
