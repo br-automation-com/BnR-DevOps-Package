@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.5.3.86 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">clang-tidy.opt</Object>
+    <Object Type="File">RunClangTidy.bat</Object>
+    <Object Type="File">Get-AsContent.ps1</Object>
+    <Object Type="File">helpermod.psm1</Object>
+    <Object Type="File">Read-AsBuildOptions.ps1</Object>
+    <Object Type="File">Set-JsonDatabase.ps1</Object>
+  </Objects>
+</Package>
