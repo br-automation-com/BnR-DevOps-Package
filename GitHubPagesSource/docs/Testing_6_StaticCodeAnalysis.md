@@ -5,14 +5,16 @@ template_url: https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/T
 
 # Static Code Analysis
 
-Static code analysis software (aka linter) analyzes the program without actually executing it
+Static code analysis software (aka linter) analyzes the program without actually executing it.
 
 Commonly this is preformed in order to:
 
-* Look for common coding mistakes that can lead to bugs or maintenance issues in the future.
+* Look for common coding mistakes that can lead to bugs or maintenance issues in the future
 * Ensure required coding standards are used
 
-Currently static code analysis available for C/C++ using [clang-tidy](https://clang.llvm.org/extra/clang-tidy/)
+Static code analysis available for **C/C++** using [clang-tidy](https://clang.llvm.org/extra/clang-tidy/)
+
+Structured Text is planned but not currently available.
 
 ## Install Clang-tidy
 
@@ -23,6 +25,7 @@ Download the latest version of [llvm]({{ llvm_install }}) and install it on your
 ## Included Template files
 
 In our templates directory we have included a [package]({{ template_url }}) that can be added to your Automation Studio project.
+
 This includes the following:
 
 | File | Description |
@@ -72,11 +75,41 @@ See [here](https://clang.llvm.org/extra/clang-tidy/checks/list.html) for a full 
 
 Any checks that you **do not** want add a line to the Checks: section of the file with a - infront of the check name (Note that wildcards are supported)
 
-For example if you want to disable all of google's checks:
+For example if you want to use our recommended checklist below:
 
 ```text
 Checks: "*,
         -llvmlibc-restrict-system-libc-headers*,
+        -abseil-*,
+        -altera-*,
+        -android-*
+        -darwin-*,
+        -fuchsia-*,
         -google-*,
+        -llvm-*,
         "
 ```
+
+## Recommended Checks
+
+| Check prefix | Description | Recommended |
+| | | |
+| abseil-* | Google abseil project specific checks | No |
+| altera-* | OpenCL programming for FPGAs specific checks | No |
+| android-* | Android specific checks | No |
+| bugprone-* | Common coding bugs | Yes |
+| cert-* | Known vulnerabilities in specific language features | Yes |
+| clang-analyzer-* | Clang static analyzer checks | Yes |
+| cppcoreguidelines-* | Well vetted guidelines from across the C++ community | Yes |
+| darwin-* | Darwin project specific checks | No |
+| fuchsia-*| Google fuchsia project specific checks | No |
+| google-* | Google specific checks | No |
+| google-readability-* | | Yes |
+| hicpp-* | high performance features, identifies conversions that you may not be aware of | Yes |
+| llvm-* | | No |
+| misc-* | miscellaneous checks, that didn't fit anywhere else |  Yes |
+| modernize-* | Update older style code to new standards | Yes |
+| objc-* | Objective C specific checks | No |
+| performance-* | Performance related checks | Maybe |
+| readability-* | various readability checks | Depends (some checks are very opinionated) |
+| zircon-* | Zircon kernel project specific checks | No |
