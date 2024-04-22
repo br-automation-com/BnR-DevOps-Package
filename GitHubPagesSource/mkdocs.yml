@@ -5,6 +5,9 @@ theme:
   features:
     - navigation.instant
     - content.code.copy
+
+plugins:
+  - macros
     
 nav:
   - Introduction: 'index.md'
@@ -38,6 +41,7 @@ nav:
     - 'B&R Unit Testing': 'Testing_3_BnRUnitTesting.md'
     - 'Integration Testing': 'Testing_4_IntegrationTesting.md'
     - 'Manual Testing': 'Testing_5_ManualTesting.md'
+    - 'Static Code Analysis': 'Testing_6_StaticCodeAnalysis.md'
   - Automation and Build Server:
     - 'Overview': 'AutomationBuildServer.md'
     - 'Template Files': 'AutomationBuildServer_0_TemplateFiles.md'

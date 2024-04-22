@@ -1,0 +1,16 @@
+---
+Checks: "*,
+        -llvmlibc-restrict-system-libc-headers*,
+"
+WarningsAsErrors: ''
+FormatStyle:     none
+
+CheckOptions:
+  - key:    misc-include-cleaner.IgnoreHeaders
+  # The following files are ignored when clang-tidy analyzes header
+  # plctypes.h - includes IEC types (BOOL, INT, DINT, etc)
+  # plc.h - includes _INIT, _CYCLIC, and _EXIT definitions
+    value:  '
+            plctypes\.h;
+            plc\.h;
+            '
