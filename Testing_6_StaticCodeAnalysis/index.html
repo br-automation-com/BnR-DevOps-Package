@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1411,7 +1411,7 @@
 <p>Clang-tidy is part of the LLVM project.</p>
 <p>Download the latest version of <a href="https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.0/LLVM-18.1.0-win64.exe">llvm</a> and install it on your machine.</p>
 <h2 id="included-template-files">Included Template files</h2>
-<p>In our templates directory we have included a <a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis">package</a> that can be added to your Automation Studio project.</p>
+<p>In our templates directory we have included a <a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis">package</a> that can be added to your Automation Studio project.</p>
 <p>This includes the following:</p>
 <table>
 <thead>
@@ -1422,27 +1422,27 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/RunClangTidy.bat">RunClangTidy.bat</a></td>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis/RunClangTidy.bat">RunClangTidy.bat</a></td>
 <td>For running clang-tidy</td>
 </tr>
 <tr>
-<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/clang-tidy.opt">clang-tidy.opt</a></td>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis/clang-tidy.opt">clang-tidy.opt</a></td>
 <td>Configuration options for clang-tidy</td>
 </tr>
 <tr>
-<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/Get-AsContent.ps1">Get-AsContent.ps1</a></td>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis/Get-AsContent.ps1">Get-AsContent.ps1</a></td>
 <td>powershell script to read the contents of the Automation Studio project</td>
 </tr>
 <tr>
-<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/helpermod.psm1">helpermod.psm1</a></td>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis/helpermod.psm1">helpermod.psm1</a></td>
 <td>powershell helper module</td>
 </tr>
 <tr>
-<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/Read-AsBuildOptions.ps1">Read-AsBuildOptions.ps1</a></td>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis/Read-AsBuildOptions.ps1">Read-AsBuildOptions.ps1</a></td>
 <td>powershell script to read the current build settings of the Automation Studio project</td>
 </tr>
 <tr>
-<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/Set-JsonDatabase.ps1">Set-JsonDatabase.ps1</a></td>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis/Set-JsonDatabase.ps1">Set-JsonDatabase.ps1</a></td>
 <td>powershell script to create the needed json database for clang-tidy</td>
 </tr>
 </tbody>
@@ -1476,7 +1476,9 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        -fuchsia-*,
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        -google-*,
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        -llvm-*,
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        &quot;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        -objc-*,
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        -zircon-*
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        &quot;
 </span></code></pre></div>
 <h2 id="recommended-checks">Recommended Checks</h2>
 <table>
@@ -1537,11 +1539,6 @@
 <td>google-*</td>
 <td>Google specific checks</td>
 <td>No</td>
-</tr>
-<tr>
-<td>google-readability-*</td>
-<td></td>
-<td>Yes</td>
 </tr>
 <tr>
 <td>hicpp-*</td>
