@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Testing_4_IntegrationTesting/">
+        <link rel="prev" href="../Testing_5_ManualTesting/">
       
       
-        <link rel="next" href="../Testing_6_StaticCodeAnalysis/">
+        <link rel="next" href="../AutomationBuildServer/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Manual Testing - DevOps Package</title>
+        <title>Static Code Analysis - DevOps Package</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#manual-testing" class="md-skip">
+        <a href="#static-code-analysis" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Manual Testing
+              Static Code Analysis
             
           </span>
         </div>
@@ -844,6 +844,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing_5_ManualTesting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manual Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -860,7 +881,7 @@
           
   
   <span class="md-ellipsis">
-    Manual Testing
+    Static Code Analysis
   </span>
   
 
@@ -871,7 +892,7 @@
         
   
   <span class="md-ellipsis">
-    Manual Testing
+    Static Code Analysis
   </span>
   
 
@@ -893,37 +914,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#template-excel-file" class="md-nav__link">
+  <a href="#install-clang-tidy" class="md-nav__link">
     <span class="md-ellipsis">
-      Template Excel File
+      Install Clang-tidy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-asserts" class="md-nav__link">
+  <a href="#included-template-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Multiple Asserts
+      Included Template files
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Multiple Asserts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-up-a-post-build-step-in-automation-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup up a Post-Build step in Automation Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup up a Post-Build step in Automation Studio">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#good-examples" class="md-nav__link">
+  <a href="#open-change-runtime-versions" class="md-nav__link">
     <span class="md-ellipsis">
-      Good Examples
+      Open Change Runtime Versions
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bad-examples" class="md-nav__link">
+  <a href="#edit-build-events" class="md-nav__link">
     <span class="md-ellipsis">
-      Bad Examples
+      Edit Build Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-post-build-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup the Post-Build step
     </span>
   </a>
   
@@ -934,31 +973,37 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#build-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Checks
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Testing_6_StaticCodeAnalysis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Static Code Analysis
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1252,37 +1297,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#template-excel-file" class="md-nav__link">
+  <a href="#install-clang-tidy" class="md-nav__link">
     <span class="md-ellipsis">
-      Template Excel File
+      Install Clang-tidy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-asserts" class="md-nav__link">
+  <a href="#included-template-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Multiple Asserts
+      Included Template files
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Multiple Asserts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-up-a-post-build-step-in-automation-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup up a Post-Build step in Automation Studio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup up a Post-Build step in Automation Studio">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#good-examples" class="md-nav__link">
+  <a href="#open-change-runtime-versions" class="md-nav__link">
     <span class="md-ellipsis">
-      Good Examples
+      Open Change Runtime Versions
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bad-examples" class="md-nav__link">
+  <a href="#edit-build-events" class="md-nav__link">
     <span class="md-ellipsis">
-      Bad Examples
+      Edit Build Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-the-post-build-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup the Post-Build step
     </span>
   </a>
   
@@ -1290,6 +1353,33 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Checks
+    </span>
+  </a>
   
 </li>
       
@@ -1308,29 +1398,202 @@
                   
 
 
-<h1 id="manual-testing">Manual Testing</h1>
-<h2 id="template-excel-file">Template Excel File</h2>
-<p>For the situations where it is not possible to write an automated test, manual testing must be done. To help keep track of the status of the manual tests, there is a template Excel file provided in this package.</p>
-<p>Details for how to use the file are included on the Overview tab of the sheet. </p>
-<p><img alt="" src="../img/Testing48.png" /></p>
-<p><img alt="" src="../img/Testing49.png" /></p>
-<h2 id="multiple-asserts">Multiple Asserts</h2>
-<p>When defining your manual tests, it can be advantageous to combine more than one expected result (assert) into one test. Manual testing is more “expensive” since it takes more time. So, designing your tests in such a way that a couple of things that are naturally related can be checked over the course of a test can make sense (as opposed to one dedicated assert per test).</p>
-<p>However, this must be balanced with being able to get useful information out of a failed test. If your test is written in such a way that 10 things are checked all within one test, then if that test fails you will spend additional time trying to figure out exactly where/how it failed.</p>
-<p>Keep this in mind as you design your tests. </p>
-<h3 id="good-examples">Good Examples</h3>
-<p>Multiple asserts that are related to minimize testing effort:</p>
-<p><img alt="" src="../img/Testing55.png" />
-<img alt="" src="../img/Testing51.png" /></p>
-<h3 id="bad-examples">Bad Examples</h3>
-<p>Tedious test that should be automated (error prone when executed manually):</p>
-<p><img alt="" src="../img/Testing52.png" /></p>
+<h1 id="static-code-analysis">Static Code Analysis</h1>
+<p>Static code analysis software (aka linter) analyzes the program without actually executing it.</p>
+<p>Commonly this is preformed in order to:</p>
+<ul>
+<li>Look for common coding mistakes that can lead to bugs or maintenance issues in the future</li>
+<li>Ensure required coding standards are used</li>
+</ul>
+<p>Static code analysis available for <strong>C/C++</strong> using <a href="https://clang.llvm.org/extra/clang-tidy/">clang-tidy</a></p>
+<p>Structured Text is planned but not currently available.</p>
+<h2 id="install-clang-tidy">Install Clang-tidy</h2>
+<p>Clang-tidy is part of the LLVM project.</p>
+<p>Download the latest version of <a href="https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.0/LLVM-18.1.0-win64.exe">llvm</a> and install it on your machine.</p>
+<h2 id="included-template-files">Included Template files</h2>
+<p>In our templates directory we have included a <a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis">package</a> that can be added to your Automation Studio project.</p>
+<p>This includes the following:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/RunClangTidy.bat">RunClangTidy.bat</a></td>
+<td>For running clang-tidy</td>
+</tr>
+<tr>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/clang-tidy.opt">clang-tidy.opt</a></td>
+<td>Configuration options for clang-tidy</td>
+</tr>
+<tr>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/Get-AsContent.ps1">Get-AsContent.ps1</a></td>
+<td>powershell script to read the contents of the Automation Studio project</td>
+</tr>
+<tr>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/helpermod.psm1">helpermod.psm1</a></td>
+<td>powershell helper module</td>
+</tr>
+<tr>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/Read-AsBuildOptions.ps1">Read-AsBuildOptions.ps1</a></td>
+<td>powershell script to read the current build settings of the Automation Studio project</td>
+</tr>
+<tr>
+<td><a href="https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis/Set-JsonDatabase.ps1">Set-JsonDatabase.ps1</a></td>
+<td>powershell script to create the needed json database for clang-tidy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setup-up-a-post-build-step-in-automation-studio">Setup up a Post-Build step in Automation Studio</h2>
+<h3 id="open-change-runtime-versions">Open Change Runtime Versions</h3>
+<p>In the Automation Studio project goto to the Project-&gt;Change Runtime Versions... button</p>
+<p><img alt="Change Runtime Versions" src="../img/Testing%20-%20Static%20Code%20Analysis%20-%20Change%20Runtime%20Versions.png" style="border: 1px solid gray;" /></p>
+<h3 id="edit-build-events">Edit Build Events</h3>
+<p><img alt="Navigate to the Build Events tab" src="../img/Testing%20-%20Static%20Code%20Analysis%20-%20Build%20Events.png" style="border: 1px solid gray;" /></p>
+<h3 id="setup-the-post-build-step">Setup the Post-Build step</h3>
+<p><img alt="Post-Build" src="../img/Testing%20-%20Static%20Code%20Analysis%20-%20Post-Build.png" style="border: 1px solid gray;" /></p>
+<div class="language-bat highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="s2">&quot;$(AS_PROJECT_PATH)/Logical/StaticCodeAnalysis/RunClangTidy.bat&quot;</span> <span class="s2">&quot;$(AS_PROJECT_PATH)&quot;</span> $(AS_CONFIGURATION)
+</span></code></pre></div>
+<h2 id="build-project">Build Project</h2>
+<p>Now on successful builds of the Automation Studio project clang-tidy will automatically be run.  Any warnings from clang-tidy will show up as warnings in Output Results window.</p>
+<p><img alt="Results" src="../img/Testing%20-%20Static%20Code%20Analysis%20-%20Clang-warnings.png" /></p>
+<p>Double clicking on the warning Automation Studio will open the file and highlight the line with the potential problem</p>
+<p><img alt="potential problem" src="../img/Testing%20-%20Static%20Code%20Analysis%20-%20Opened%20Warning.png" /></p>
+<h2 id="customization">Customization</h2>
+<p>By default we have enabled all checks except llvmlibc-restrict-system-libc-headers.  If you need to disable any additional checks edit the clang-tidy.opt file.</p>
+<p>See <a href="https://clang.llvm.org/extra/clang-tidy/checks/list.html">here</a> for a full list of available checks</p>
+<p>Any checks that you <strong>do not</strong> want add a line to the Checks: section of the file with a - infront of the check name (Note that wildcards are supported)</p>
+<p>For example if you want to use our recommended checklist below:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Checks: &quot;*,
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        -llvmlibc-restrict-system-libc-headers*,
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        -abseil-*,
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        -altera-*,
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        -android-*
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        -darwin-*,
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        -fuchsia-*,
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        -google-*,
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        -llvm-*,
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        &quot;
+</span></code></pre></div>
+<h2 id="recommended-checks">Recommended Checks</h2>
+<table>
+<thead>
+<tr>
+<th>Check prefix</th>
+<th>Description</th>
+<th>Recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abseil-*</td>
+<td>Google abseil project specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>altera-*</td>
+<td>OpenCL programming for FPGAs specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>android-*</td>
+<td>Android specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>bugprone-*</td>
+<td>Common coding bugs</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>cert-*</td>
+<td>Known vulnerabilities in specific language features</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>clang-analyzer-*</td>
+<td>Clang static analyzer checks</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>cppcoreguidelines-*</td>
+<td>Well vetted guidelines from across the C++ community</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>darwin-*</td>
+<td>Darwin project specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fuchsia-*</td>
+<td>Google fuchsia project specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>google-*</td>
+<td>Google specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>google-readability-*</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>hicpp-*</td>
+<td>high performance features, identifies conversions that you may not be aware of</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>llvm-*</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>misc-*</td>
+<td>miscellaneous checks, that didn't fit anywhere else</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>modernize-*</td>
+<td>Update older style code to new standards</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>objc-*</td>
+<td>Objective C specific checks</td>
+<td>No</td>
+</tr>
+<tr>
+<td>performance-*</td>
+<td>Performance related checks</td>
+<td>Maybe</td>
+</tr>
+<tr>
+<td>readability-*</td>
+<td>various readability checks</td>
+<td>Depends (some checks are very opinionated)</td>
+</tr>
+<tr>
+<td>zircon-*</td>
+<td>Zircon kernel project specific checks</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 
 
 
 
 
 
+
+  
+  
 
 
 
