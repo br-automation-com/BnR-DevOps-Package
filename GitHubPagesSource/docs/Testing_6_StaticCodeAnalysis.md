@@ -1,6 +1,6 @@
 ---
 llvm_install: https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.0/LLVM-18.1.0-win64.exe
-template_url: https://github.com/br-automation-com/BnR-DevOps-Package/raw/main/Testing/Template%20Files/StaticCodeAnalysis
+template_url: https://github.com/br-automation-com/BnR-DevOps-Package/raw/develop/Testing/Template%20Files/StaticCodeAnalysis
 ---
 
 # Static Code Analysis
@@ -87,6 +87,8 @@ Checks: "*,
         -fuchsia-*,
         -google-*,
         -llvm-*,
+        -objc-*,
+        -zircon-*
         "
 ```
 
@@ -104,7 +106,6 @@ Checks: "*,
 | darwin-* | Darwin project specific checks | No |
 | fuchsia-*| Google fuchsia project specific checks | No |
 | google-* | Google specific checks | No |
-| google-readability-* | | Yes |
 | hicpp-* | high performance features, identifies conversions that you may not be aware of | Yes |
 | llvm-* | | No |
 | misc-* | miscellaneous checks, that didn't fit anywhere else |  Yes |
