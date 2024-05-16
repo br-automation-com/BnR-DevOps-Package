@@ -30,6 +30,13 @@ For example:
 
 ![](img%5CProject%20Management31.png)
 
+## B&R Software Guidelines
+
+B&R has three resources available for software guidelines: 
+
+- [B&R Coding Guidelines (TM231)](https://www.br-automation.com/en-ca/downloads/automation-academy/training-modules/control-technology/tm231-br-coding-guidelines/)
+- [B&R Library Design Guidelines (TM232)](https://www.br-automation.com/en-ca/downloads/automation-academy/training-modules/control-technology/tm232-br-library-design-guidelines/)
+- [B&R Application Design Guidelines (TM233)](https://www.br-automation.com/en-ca/downloads/automation-academy/training-modules/control-technology/tm233-br-application-design-guidelines/)
 
 ## Code Design & Testing
 
