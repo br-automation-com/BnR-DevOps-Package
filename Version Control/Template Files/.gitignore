@@ -46,5 +46,6 @@
 # But include the required binary files:
 #!/Physical/*/*/*/C/PLC/R/CPU/src.st1
 #!/Physical/*/*/*/C/PLC/R/CPU/tmp.sto
+#!/Physical/*/*/*/C/PLC/R/CPU/GLOBAL_VARIABLESTranslation_SF.xml
 
 
